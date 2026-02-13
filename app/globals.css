@@ -1,0 +1,261 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+:root {
+  /* Dark Navy Blue background inspired by the new color scheme */
+  --background: #001146;
+  --foreground: #ffffff;
+  --card: #000f3f;
+  --card-foreground: #ffffff;
+  --popover: #000f3f;
+  --popover-foreground: #ffffff;
+  /* Gold/Bronze primary color */
+  --primary: #C9A962;
+  --primary-foreground: #001146;
+  /* Dark Navy secondary */
+  --secondary: #000e38;
+  --secondary-foreground: #ffffff;
+  --muted: #000c31;
+  --muted-foreground: #B8C5D4;
+  /* Gold accent */
+  --accent: #C9A962;
+  --accent-foreground: #001146;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #000a2a;
+  --input: #000e38;
+  --ring: #C9A962;
+  --radius: 0.25rem;
+  --chart-1: #C9A962;
+  --chart-2: #ffffff;
+  --chart-3: #B8C5D4;
+  --chart-4: #000f3f;
+  --chart-5: #D4B872;
+  --sidebar: #000923;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #C9A962;
+  --sidebar-primary-foreground: #001146;
+  --sidebar-accent: #000f3f;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #000e38;
+  --sidebar-ring: #C9A962;
+  --font-sans: "Geist", "Geist Fallback";
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  /* Gold accent colors for sections */
+  --accent-gold: #C9A962;
+  --accent-gold-light: #D4B872;
+  --accent-gold-dark: #B8956A;
+  /* Navy blue for headers and dark sections */
+  --navy: #001146;
+  --navy-light: #000f3f;
+  --navy-dark: #000923;
+}
+
+.dark {
+  /* Dark navy background */
+  --background: #001146;
+  --foreground: #ffffff;
+  --card: #000f3f;
+  --card-foreground: #ffffff;
+  --popover: #000f3f;
+  --popover-foreground: #ffffff;
+  /* Gold primary in dark mode */
+  --primary: #C9A962;
+  --primary-foreground: #001146;
+  --secondary: #000e38;
+  --secondary-foreground: #ffffff;
+  --muted: #000c31;
+  --muted-foreground: #B8C5D4;
+  --accent: #C9A962;
+  --accent-foreground: #001146;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #000a2a;
+  --input: #000e38;
+  --ring: #C9A962;
+  --chart-1: #C9A962;
+  --chart-2: #ffffff;
+  --chart-3: #B8C5D4;
+  --chart-4: #000f3f;
+  --chart-5: #D4B872;
+  --sidebar: #000923;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #C9A962;
+  --sidebar-primary-foreground: #001146;
+  --sidebar-accent: #000f3f;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #000e38;
+  --sidebar-ring: #C9A962;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* Professional 3D perspective utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.perspective-1200 {
+  perspective: 1200px;
+}
+
+.perspective-1500 {
+  perspective: 1500px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.text-3d {
+  text-shadow: 2px 2px 0px rgba(201, 169, 98, 0.3), 4px 4px 0px rgba(201, 169, 98, 0.2), 6px 6px 0px
+    rgba(201, 169, 98, 0.1);
+}
+
+/* Glass effect utilities for modern aesthetic */
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Hide scrollbar on html and body elements directly */
+html {
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  background: linear-gradient(
+    to bottom,
+    #000923 0%,
+    #000a2a 10%,
+    #000c31 20%,
+    #000e38 35%,
+    #000f3f 50%,
+    #001146 75%
+  );
+  background-attachment: scroll;
+  min-height: 100%;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Add custom scrollbar styling for sections with overflow */
+.scrollbar-custom::-webkit-scrollbar {
+  height: 8px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background: #C9A962;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb:hover {
+  background: #D4B872;
+}
+
+.scrollbar-custom {
+  scrollbar-width: thin;
+  scrollbar-color: #C9A962 rgba(26, 26, 46, 0.5);
+}
+
+/* Smooth transitions and animations */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply text-foreground;
+  }
+}
+
+/* Professional letter-spacing and font rendering */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .antialiased-pro {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Added subtle shimmer animation for heading text */
+  @keyframes shimmer {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+
+  .animate-shimmer {
+    animation: shimmer 3s ease-in-out infinite;
+  }
+}
