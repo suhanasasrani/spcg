@@ -61,7 +61,7 @@ export function Team() {
   const backgroundCanvasRef = useRef<HTMLCanvasElement>(null)
   const lastPosRef = useRef<{ x: number; y: number } | null>(null)
   const strokesRef = useRef<Array<{ points: Array<{ x: number; y: number; color: string }>; timestamp: number }>>([])
-  const animationFrameRef = useRef<number>()
+  const animationFrameRef = useRef<number>(0)
   const scrollOffsetRef = useRef(0)
   const penLoadedRef = useRef(false)
   const [flippedCards, setFlippedCards] = useState<Set<string>>(new Set())
@@ -519,12 +519,12 @@ function TeamNode({
         }}
         style={{
           transform: isHovered ? "translateZ(40px)" : "translateZ(0px)",
+          transformStyle: "preserve-3d"
         }}
         transition={{
           rotateY: { duration: 0.7, ease: [0.4, 0, 0.2, 1] },
         }}
         className="relative w-full h-full"
-        style={{ transformStyle: "preserve-3d" }}
       >
         <div
           className="absolute inset-0 overflow-hidden"

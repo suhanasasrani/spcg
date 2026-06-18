@@ -10,38 +10,16 @@ const projects = [
   {
     id: 1,
     title: "Alumni Association",
-    category: "",
+    category: "Operations & Tools",
     description: "Alumni SaaS Portal vendor selection and implementation support.",
     details:
       "SPCG supported the Alumni Association in selecting a suitable Alumni SaaS Portal by conducting a structured comparative business analysis (CBA) of 8–10 vendors. Using a standardized evaluation framework covering functionality, security, user experience, cost–value, and vendor credibility, SPCG shortlisted three vendors. The committee facilitated multiple vendor discussions and technical deep dives, enabling the Alumni Association to onboard a scalable, secure, and value-aligned solution.",
     fullDescription:
       "Evaluation Methodology\nEach vendor was assessed using a standardized evaluation framework developed by SPCG, covering:\n\n• Functional Capabilities\nAlumni database management, event handling, communication tools, donation & payment workflows\n\n• Technical & Security Aspects\nData privacy, platform scalability, system reliability, and integration support\n\n• User Experience\nEase of use for administrators and alumni, UI/UX quality, accessibility\n\n• Cost–Value Assessment\nPricing structures, long-term cost efficiency, feature-to-cost alignment\n\n• Vendor Credibility & Support\nTrack record, customer references, post-deployment support, SLAs",
-    position: 15,
+    images: []
   },
   {
     id: 2,
-    title: "Global Brand Transformation",
-    category: "Branding",
-    description: "Secure therapy booking and management platform.",
-    details:
-      "SPCG delivered a secure, end-to-end therapy booking and management platform for Echoing Healthy Ageing. The solution enables clients to book, reschedule, and track therapy sessions, therapists to manage schedules and submit session reports, and administrators to monitor all platform activity through a centralized dashboard.",
-    fullDescription:
-      "Discovery & Planning: Mapped therapy workflows, user roles, and compliance needs\n\nArchitecture & Design: Built a secure, scalable full-stack system with role-based access\n\nCore Development: Implemented session booking, dashboards, and admin controls\n\nIntegrations & Automation: Enabled WhatsApp reminders and Razorpay payments\n\nSecurity & Testing: Ensured data privacy, access control, and system reliability\n\nDeployment: Launched a production-ready platform with operational handover",
-    position: 40,
-  },
-  {
-    id: 3,
-    title: "Next-Gen Financial Platform",
-    category: "Technology",
-    description: "Growth & Strategy initiatives with partnerships and optimization.",
-    details:
-      "SPCG supported a Growth & Strategy initiative focused on partnerships, marketing activation, product optimization, and operational efficiency. The team drove strategic partnerships that reduced CAC from ₹150+ to under ₹50, supported a Diwali influencer campaign generating a ₹4.5L revenue uplift.",
-    fullDescription:
-      "The project was executed through parallel, outcome-driven workstreams:\n\n* Growth Strategy & Partnerships\nDesigned and executed strategic partnerships with colleges and ecosystem players (including NoBrokerHood and GreenGains), expanding reach while reducing Customer Acquisition Cost (CAC) from ₹150+ to under ₹50.\n\n* Marketing & Demand Generation\nSupported Diwali influencer activation campaigns, contributing to a ₹4.5L uplift in festive-period orders. Coordinated social media partnerships to amplify brand reach and conversions.\n\n* Product, UX & Conversion Optimization\nEnhanced landing page UX through user research and competitor benchmarking to identify preference drivers. Coordinated with the technology team for deployments and iteration cycles.\n\n* Brand & D2C Enablement\nBuilt a D2C onboarding tracker to streamline brand onboarding and monitor activation status across channels.\n\n* Operations & Automation\nDeveloped Python-based automation scripts for data extraction and formatting, significantly reducing manual effort and accelerating insight generation for decision-making.",
-    position: 65,
-  },
-  {
-    id: 4,
     title: "Echoing Healthy Ageing",
     category: "Digital Therapy & Care Management",
     description:
@@ -70,8 +48,56 @@ Analytics: Dashboard for session volumes, therapist activity, and platform insig
 
 Impact:
 Reduced manual work, improved session reliability, enhanced client experience, full admin visibility, and secure handling of healthcare data. Foundation ready for analytics and AI-driven insights.`,
-    viewLiveUrl: "https://drive.google.com/drive/folders/1hNiqQvcIS2hk022noJZcx672bfOqUg-8?usp=sharing",
-    position: 90,
+    viewLiveUrl: "https://eha-rose.vercel.app/",
+    images: [
+      "/images/eha-group.jpg",
+      "/images/eha-screenshot-1.png",
+      "/images/eha-screenshot-2.png",
+      "/images/eha-screenshot-3.png"
+    ]
+  },
+  {
+    id: 3,
+    title: "Blueberry Fin",
+    category: "Financial Technology",
+    description: "Financial modeling and strategic positioning for a rapidly scaling fintech company.",
+    details:
+      "SPCG partnered with Blueberry Fin to refine their market positioning and optimize their financial models. The project focused on aligning their product offerings with market demands, streamlining revenue streams, and creating a scalable operational framework.",
+    fullDescription:
+      "Strategic Alignment & Financial Optimization\n\n• Market Analysis & Positioning\nConducted deep-dive analysis into the fintech landscape to carve out a unique value proposition for Blueberry Fin's services.\n\n• Financial Modeling\nDeveloped robust financial projections and scenario analyses to support future funding rounds and sustainable growth.\n\n• Operational Strategy\nCreated scalable frameworks to handle increasing transaction volumes without compromising on user experience or security.\n\n• Growth Initiatives\nIdentified key partnership opportunities to drive user acquisition and expand market reach.",
+    viewLiveUrl: "https://www.blueberryfin.com/",
+    images: [
+      "/images/blueberry-screenshot-1.png",
+      "/images/blueberry-screenshot-2.png"
+    ]
+  },
+  {
+    id: 4,
+    title: "Loopify",
+    category: "Sustainability & Tech",
+    description: "End-to-end platform architecture and strategic roadmap for a circular economy startup.",
+    details:
+      "SPCG worked closely with Loopify to design a seamless digital experience that connects eco-conscious consumers with sustainable products. We provided a comprehensive technology architecture and go-to-market strategy.",
+    fullDescription: "Empowering the Circular Economy\n\n• Platform Architecture\nDesigned a scalable, cloud-native architecture capable of supporting complex supply chain tracking and vendor integrations.\n\n• User Experience Strategy\nMapped out intuitive user journeys to simplify the process of discovering and purchasing sustainable products.\n\n• Go-To-Market Plan\nFormulated a targeted launch strategy focusing on key demographics and strategic brand partnerships to maximize initial impact.\n\n• Impact Measurement\nIntegrated analytics to track and display the environmental impact of user purchases, enhancing brand transparency and customer loyalty.",
+    images: [
+      "/images/loopify-logo.png"
+    ]
+  },
+  {
+    id: 5,
+    title: "Boncare Insurance Solutions",
+    category: "Corporate Insurance Platform",
+    description: "A comprehensive platform for corporate and individual insurance management, focusing on clarity, trust, and expert support.",
+    details:
+      "Boncare delivers clear, human insurance advice with practical solutions and long-term, dedicated support when it matters most. Built on years of corporate exposure, it guides businesses and families with clarity and care.",
+    fullDescription: "Everything Your Business Needs - Covered\n\n• Seamless Corporate & Individual Portals\nTailored digital experiences for enterprises, MSMEs, and individual policyholders to easily discover and manage coverage.\n\n• Claims Assistance Workflow\nStreamlined digital claims filing and tracking system ensuring fast, transparent resolution when it matters most.\n\n• Intelligent Quotation Engine\nIntegrated robust form processes to instantly connect prospective clients with tailored insurance solutions.\n\n• Policy Management\nEnd-to-end management from group health to liability and cyber insurance, all within an intuitive dashboard.",
+    viewLiveUrl: "https://boncare1.lovable.app/corporate",
+    images: [
+      "/images/boncare-screenshot-1.png",
+      "/images/boncare-screenshot-2.png",
+      "/images/boncare-screenshot-3.png",
+      "/images/boncare-screenshot-4.png"
+    ]
   },
 ]
 
@@ -81,346 +107,166 @@ export function Projects() {
   const [expandedProject, setExpandedProject] = useState<number | null>(null)
   const [hoveredProject, setHoveredProject] = useState<number | null>(null)
 
-  useEffect(() => {
-    const savedScrollPosition = sessionStorage.getItem("projectsScrollPosition")
-    if (savedScrollPosition && containerRef.current) {
-      containerRef.current.scrollLeft = Number.parseInt(savedScrollPosition, 10)
-    }
-  }, [])
-
-  useEffect(() => {
-    const container = containerRef.current
-    if (!container) return
-
-    const handleScroll = () => {
-      sessionStorage.setItem("projectsScrollPosition", container.scrollLeft.toString())
-    }
-
-    container.addEventListener("scroll", handleScroll)
-    return () => container.removeEventListener("scroll", handleScroll)
-  }, [])
-
-  const { scrollXProgress } = useScroll({
-    container: containerRef,
-    axis: "x",
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
   })
+  
+  const drawProgress = scrollYProgress
 
-  const pathTranslateX = useTransform(scrollXProgress, [0, 1], ["0%", "-66.6%"])
-  const cardsTranslateX = useTransform(scrollXProgress, [0, 1], [150, -500])
-
-  const backgroundX = useTransform(scrollXProgress, [0, 1], [0, -200])
-  const backgroundOpacity = useTransform(scrollXProgress, [0, 0.3, 0.7, 1], [0, 0.4, 0.4, 0])
-
-  const card1X = useTransform(cardsTranslateX, (x) => x + (projects[0].position / 100) * 1200)
-  const card2X = useTransform(cardsTranslateX, (x) => x + (projects[1].position / 100) * 1200)
-  const card3X = useTransform(cardsTranslateX, (x) => x + (projects[2].position / 100) * 1200)
-  const card4X = useTransform(cardsTranslateX, (x) => x + (projects[3].position / 100) * 1200)
-
-  const card1Scale = useTransform(card1X, [50, 150, 250], [0.9, 1.05, 0.9])
-  const card2Scale = useTransform(card2X, [50, 150, 250], [0.9, 1.05, 0.9])
-  const card3Scale = useTransform(card3X, [50, 150, 250], [0.9, 1.05, 0.9])
-  const card4Scale = useTransform(card4X, [50, 150, 250], [0.9, 1.05, 0.9])
-
-  const pathGlow1 = useTransform(card1X, [100, 150, 200], [0, 1, 0])
-  const pathGlow2 = useTransform(card2X, [100, 150, 200], [0, 1, 0])
-  const pathGlow3 = useTransform(card3X, [100, 150, 200], [0, 1, 0])
-  const pathGlow4 = useTransform(card4X, [100, 150, 200], [0, 1, 0])
-
-  const cardOpacity1 = useTransform(pathGlow1, [0, 1], [0.6, 1])
-  const cardOpacity2 = useTransform(pathGlow2, [0, 1], [0.6, 1])
-  const cardOpacity3 = useTransform(pathGlow3, [0, 1], [0.6, 1])
-  const cardOpacity4 = useTransform(pathGlow4, [0, 1], [0.6, 1])
-
-  const cardTransforms = [
-    {
-      cardX: card1X,
-      cardScale: card1Scale,
-      pathGlow: pathGlow1,
-      cardOpacity: cardOpacity1,
-      cardY: 20,
-      isAbove: true,
-      zIndex: 20,
-    },
-    {
-      cardX: card2X,
-      cardScale: card2Scale,
-      pathGlow: pathGlow2,
-      cardOpacity: cardOpacity2,
-      cardY: 140,
-      isAbove: false,
-      zIndex: 10,
-    },
-    {
-      cardX: card3X,
-      cardScale: card3Scale,
-      pathGlow: pathGlow3,
-      cardOpacity: cardOpacity3,
-      cardY: 20,
-      isAbove: true,
-      zIndex: 30,
-    },
-    {
-      cardX: card4X,
-      cardScale: card4Scale,
-      pathGlow: pathGlow4,
-      cardOpacity: cardOpacity4,
-      cardY: 140,
-      isAbove: false,
-      zIndex: 15,
-    },
-  ]
+  // Projects are evenly spaced for 5 items
+  const positions = [10, 30, 50, 70, 90]
+  
+  const containerX = useTransform(scrollYProgress, [0, 1], ["0%", "-80%"]) // Moves the 500vw container left by 400vw, perfectly centering the last item (at 450vw) at the end of scroll
+  
+  const [enlargedImage, setEnlargedImage] = useState<string | null>(null)
 
   return (
     <>
       <section
         ref={containerRef}
-        className="relative w-full h-screen md:h-screen flex items-center justify-center overflow-x-auto overflow-y-hidden snap-x snap-mandatory perspective-1500 scrollbar-custom"
+        className="relative w-full h-[600vh] bg-[#000513]"
       >
-        <div className="w-[300%] md:w-[250%] lg:w-[220%] h-full flex items-center relative">
+        <div className="sticky top-0 h-screen overflow-hidden flex items-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8 }}
+            className="fixed top-4 sm:top-8 md:top-16 left-0 right-0 text-2xl sm:text-3xl md:text-5xl font-bold text-white text-center text-balance z-20 pointer-events-none"
+          >
+            Featured Projects
+          </motion.h2>
+
+          <motion.div 
+            className="w-[500vw] h-full flex items-center relative"
+            style={{ x: containerX }}
+          >
           <div className="absolute inset-0 pointer-events-none z-0">
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#C9A962]/10 to-transparent" />
-            {[...Array(8)].map((_, i) => (
-              <div key={i} className="absolute top-0 bottom-0 w-px bg-[#C9A962]/20" style={{ left: `${i * 15}%` }} />
-            ))}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#C9A962]/5 to-transparent" />
           </div>
 
-          <div className="relative h-full flex items-center w-full">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8 }}
-              className="absolute top-4 sm:top-8 md:top-16 left-0 right-0 text-2xl sm:text-3xl md:text-5xl font-bold text-white text-center text-balance z-20"
-            >
-              Featured Projects
-            </motion.h2>
+          <div className="absolute inset-0 w-full h-full flex items-center">
+            <svg className="w-full h-full pointer-events-none" viewBox="0 0 1000 100" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#FFDF88" stopOpacity="0.4" />
+                  <stop offset="50%" stopColor="#FFFFFF" stopOpacity="1" />
+                  <stop offset="100%" stopColor="#FFDF88" stopOpacity="0.4" />
+                </linearGradient>
+              </defs>
 
-            <div className="relative w-full h-full flex items-center overflow-hidden">
-              <motion.div style={{ x: pathTranslateX }} className="absolute inset-0 w-[300%]">
-                <svg className="w-full h-full pointer-events-none" viewBox="0 0 3000 500" preserveAspectRatio="none">
-                  <defs>
-                    <filter id="glow-horizontal">
-                      <feGaussianBlur stdDeviation="6" result="coloredBlur" />
-                      <feMerge>
-                        <feMergeNode in="coloredBlur" />
-                        <feMergeNode in="SourceGraphic" />
-                      </feMerge>
-                    </filter>
-                    <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#C9A962" stopOpacity="0.3" />
-                      <stop offset="50%" stopColor="#C9A962" stopOpacity="1" />
-                      <stop offset="100%" stopColor="#C9A962" stopOpacity="0.3" />
-                    </linearGradient>
-                  </defs>
+              {/* Bright static curvy track */}
+              <motion.path
+                initial={{ opacity: 0 }}
+                animate={isInView ? { opacity: 1 } : {}}
+                transition={{ duration: 1.5, delay: 0.2 }}
+                d="M -100 52 C 0 52, 0 48, 100 48 C 200 48, 200 52, 300 52 C 400 52, 400 48, 500 48 C 600 48, 600 52, 700 52 C 800 52, 800 48, 900 48"
+                stroke="#FFDF88"
+                strokeWidth="0.5"
+                fill="none"
+                style={{
+                  filter: "drop-shadow(0 0 10px rgba(255, 223, 136, 0.8)) drop-shadow(0 0 20px rgba(201, 169, 98, 0.6))"
+                }}
+              />
 
-                  <motion.path
-                    initial={{ pathLength: 0, opacity: 0 }}
-                    animate={
-                      isInView
-                        ? {
-                            pathLength: 1,
-                            opacity: 1,
-                          }
-                        : {}
-                    }
-                    transition={{
-                      pathLength: { duration: 2, ease: "easeInOut" },
-                      opacity: { duration: 1 },
-                    }}
-                    d="M 0 250 Q 500 180, 900 250 T 1700 250 Q 2100 320, 2500 250 T 3000 250"
-                    stroke="url(#pathGradient)"
-                    strokeWidth="4"
-                    fill="none"
-                    filter="url(#glow-horizontal)"
+              {/* Main animated glowing curvy path following scroll */}
+              <motion.path
+                style={{
+                  pathLength: drawProgress,
+                  opacity: isInView ? 1 : 0,
+                  filter: "drop-shadow(0 0 15px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 30px rgba(255, 223, 136, 0.8))"
+                }}
+                transition={{ opacity: { duration: 1 } }}
+                d="M -100 52 C 0 52, 0 48, 100 48 C 200 48, 200 52, 300 52 C 400 52, 400 48, 500 48 C 600 48, 600 52, 700 52 C 800 52, 800 48, 900 48"
+                stroke="url(#pathGradient)"
+                strokeWidth="1.5"
+                fill="none"
+              />
+
+              {/* Clean waypoints for each project */}
+              {positions.map((pos, index) => {
+                return (
+                  <motion.circle
+                    key={`waypoint-${pos}`}
+                    initial={{ scale: 0, opacity: 0 }}
+                    animate={isInView ? { scale: 1, opacity: 1 } : {}}
+                    transition={{ duration: 0.8, delay: 0.5 + pos / 100 }}
+                    cx={pos * 10}
+                    cy={index % 2 === 0 ? "48" : "52"}
+                    r="2.5"
+                    fill="#000923"
+                    stroke="#FFDF88"
+                    strokeWidth="1.5"
                     style={{
-                      filter: "drop-shadow(0 0 20px rgba(212, 175, 55, 0.8))",
+                      filter: "drop-shadow(0 0 5px rgba(255, 223, 136, 0.8))"
                     }}
                   />
-
-                  <motion.path
-                    initial={{ pathLength: 0, opacity: 0 }}
-                    animate={
-                      isInView
-                        ? {
-                            pathLength: 1,
-                            opacity: 0.4,
-                          }
-                        : {}
-                    }
-                    transition={{
-                      pathLength: { duration: 2.5, delay: 0.3, ease: "easeInOut" },
-                      opacity: { duration: 1, delay: 0.3 },
-                    }}
-                    d="M 0 230 Q 500 160, 900 230 T 1700 230 Q 2100 300, 2500 230 T 3000 230"
-                    stroke="#C9A962"
-                    strokeWidth="2"
-                    fill="none"
-                    opacity="0.4"
-                    filter="url(#glow-horizontal)"
-                  />
-
-                  <motion.path
-                    animate={{
-                      strokeDashoffset: [0, -200],
-                    }}
-                    transition={{
-                      duration: 4,
-                      repeat: repeatForever,
-                      ease: "linear",
-                    }}
-                    d="M 0 250 Q 500 180, 900 250 T 1700 250 Q 2100 320, 2500 250 T 3000 250"
-                    stroke="#C9A962"
-                    strokeWidth="2"
-                    strokeDasharray="40 60"
-                    fill="none"
-                    opacity="0.6"
-                    filter="url(#glow-horizontal)"
-                  />
-
-                  {[0, 0.33, 0.66].map((offset, i) => (
-                    <motion.circle
-                      key={`particle-${i}`}
-                      initial={{ opacity: 0 }}
-                      animate={
-                        isInView
-                          ? {
-                              opacity: [0, 1, 1, 0],
-                            }
-                          : {}
-                      }
-                      transition={{
-                        duration: 8,
-                        delay: offset * 8,
-                        repeat: repeatForever,
-                        ease: "linear",
-                      }}
-                      r="8"
-                      fill="#C9A962"
-                      filter="url(#glow-horizontal)"
-                      style={{
-                        filter: "drop-shadow(0 0 15px rgba(212, 175, 55, 1))",
-                      }}
-                    >
-                      <animateMotion
-                        dur="8s"
-                        begin={`${offset * 8}s`}
-                        repeatCount="indefinite"
-                        path="M 0 250 Q 500 180, 900 250 T 1700 250 Q 2100 320, 2500 250 T 3000 250"
-                      />
-                    </motion.circle>
-                  ))}
-
-                  {[15, 40, 65, 90].map((pos) => {
-                    const x = (pos / 100) * 3000
-                    const y = 250 + Math.sin((pos / 100) * Math.PI * 4) * 30
-                    return (
-                      <motion.circle
-                        key={`waypoint-${pos}`}
-                        initial={{ scale: 0, opacity: 0 }}
-                        animate={
-                          isInView
-                            ? {
-                                scale: [1, 1.4, 1],
-                                opacity: [0.6, 1, 0.6],
-                              }
-                            : {}
-                        }
-                        transition={{
-                          duration: 2.5,
-                          delay: 0.5 + pos / 100,
-                          repeat: repeatForever,
-                          ease: "easeInOut",
-                        }}
-                        cx={x}
-                        cy={y}
-                        r="12"
-                        fill="#C9A962"
-                        filter="url(#glow-horizontal)"
-                        style={{
-                          filter: "drop-shadow(0 0 25px rgba(212, 175, 55, 1))",
-                        }}
-                      />
-                    )
-                  })}
-                </svg>
-              </motion.div>
-
-              <div className="absolute inset-0 flex items-center">
-                {projects.map((project, index) => {
-                  const { cardX, cardScale, cardOpacity, cardY, isAbove, zIndex } = cardTransforms[index]
-
-                  return (
-                    <motion.div
-                      key={project.id}
-                      style={{
-                        x: cardX,
-                        y: cardY,
-                        zIndex,
-                      }}
-                      className="absolute preserve-3d"
-                      onMouseEnter={() => setHoveredProject(project.id)}
-                      onMouseLeave={() => setHoveredProject(null)}
-                    >
-                      <motion.div
-                        animate={{
-                          scaleY: hoveredProject === project.id ? 1.3 : 1,
-                        }}
-                        style={{
-                          opacity: cardOpacity.get(),
-                        }}
-                        className="absolute left-1/2 -translate-x-1/2 w-1 bg-[#C9A962]"
-                        style={{
-                          height: "80px",
-                          top: isAbove ? "100%" : "-80px",
-                          boxShadow: `0 0 10px rgba(212, 175, 55, 0.9)`,
-                        }}
-                      />
-
-                      <motion.div
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                        style={{
-                          scale: cardScale,
-                        }}
-                        whileHover={{
-                          scale: 1.08,
-                          rotateX: 5,
-                          rotateY: -5,
-                          boxShadow: "0 0 60px rgba(212, 175, 55, 0.9), inset 0 0 30px rgba(212, 175, 55, 0.2)",
-                        }}
-                        transition={{ duration: 0.5, delay: 0.5 + index * 0.15 }}
-                        className="relative bg-[#000f3f]/95 border border-white/20 p-2 sm:p-2.5 md:p-3 cursor-pointer w-40 sm:w-48 md:w-64 h-auto preserve-3d"
-                        onClick={() => setExpandedProject(project.id)}
-                      >
-                        <div className="text-[8px] sm:text-[9px] md:text-xs text-[#B8C5D4] mb-1 tracking-wider uppercase">
-                          {project.category}
-                        </div>
-                        <h3 className="text-xs sm:text-sm md:text-base font-bold text-white mb-2 text-balance">
-                          {project.title}
-                        </h3>
-                        <p className="text-[#B8C5D4] text-[10px] sm:text-xs leading-relaxed">{project.description}</p>
-
-                        <div className="flex items-center justify-center mt-3 pt-2 border-t border-white/10">
-                          <button className="text-[9px] md:text-xs text-[#C9A962] hover:text-white font-semibold uppercase tracking-wider transition-colors">
-                            Click to View More →
-                          </button>
-                        </div>
-
-                        <motion.div
-                          style={{
-                            opacity: cardOpacity.get(),
-                          }}
-                          className="absolute inset-0 border-2 border-[#C9A962] pointer-events-none"
-                          style={{
-                            boxShadow: "0 0 40px rgba(212, 175, 55, 1)",
-                          }}
-                        />
-                      </motion.div>
-                    </motion.div>
-                  )
-                })}
-              </div>
-            </div>
+                )
+              })}
+            </svg>
           </div>
+
+          <div className="absolute inset-0 w-full h-full">
+            {projects.map((project, index) => {
+              const pos = positions[index]
+              const isAbove = index % 2 === 0
+              
+              return (
+                <div
+                  key={project.id}
+                  className="absolute z-10"
+                  style={{ 
+                    left: `${pos}%`,
+                    top: `${isAbove ? 48 : 52}%`,
+                    transform: 'translate(-50%, -50%)'
+                  }}
+                >
+                  <motion.div
+                    className="absolute left-1/2 -translate-x-1/2 w-0.5 bg-[#C9A962]/50"
+                    style={{
+                      height: "80px",
+                      top: isAbove ? "auto" : "50%",
+                      bottom: isAbove ? "50%" : "auto",
+                      boxShadow: `0 0 10px rgba(212, 175, 55, 0.4)`,
+                    }}
+                  />
+
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                    whileHover={{
+                      scale: 1.05,
+                      boxShadow: "0 0 40px rgba(212, 175, 55, 0.6), inset 0 0 20px rgba(212, 175, 55, 0.15)",
+                    }}
+                    transition={{ duration: 0.5, delay: 0.5 + index * 0.15 }}
+                    className="relative bg-[#000f3f]/95 border border-[#C9A962]/30 p-4 sm:p-5 cursor-pointer w-64 sm:w-72 md:w-80 backdrop-blur-sm shadow-2xl"
+                    style={{
+                      transform: `translateY(${isAbove ? '-160px' : '160px'})`
+                    }}
+                    onClick={() => setExpandedProject(project.id)}
+                    onMouseEnter={() => setHoveredProject(project.id)}
+                    onMouseLeave={() => setHoveredProject(null)}
+                  >
+                    <div className="text-[10px] sm:text-xs text-[#C9A962] mb-2 tracking-wider uppercase font-semibold">
+                      {project.category}
+                    </div>
+                    <h3 className="text-sm sm:text-base md:text-lg font-bold text-white mb-2 text-balance leading-tight">
+                      {project.title}
+                    </h3>
+                    <p className="text-[#B8C5D4] text-xs sm:text-sm leading-relaxed line-clamp-3 mb-4">
+                      {project.description}
+                    </p>
+
+                    <div className="flex items-center justify-between pt-3 border-t border-[#C9A962]/20">
+                      <span className="text-xs text-[#C9A962] hover:text-white font-semibold uppercase tracking-wider transition-colors">
+                        View Case Study →
+                      </span>
+                    </div>
+                  </motion.div>
+                </div>
+              )
+            })}
+          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -475,22 +321,23 @@ export function Projects() {
                     </p>
                   </div>
 
-                  <div className="space-y-4 pt-6 border-t border-[#C9A962]/30">
-                    <h3 className="text-xl font-semibold text-[#C9A962]">Project Gallery</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {[1, 2, 3, 4].map((i) => (
-                        <div
-                          key={i}
-                          className="aspect-video bg-gradient-to-br from-[#C9A962]/10 to-[#C9A962]/5 border border-[#C9A962]/30 rounded-lg flex items-center justify-center"
-                        >
-                          <div className="text-center">
-                            <div className="text-[#C9A962] text-sm">Image {i}</div>
-                            <div className="text-gray-500 text-xs mt-1">Add project images here</div>
+                  {projects.find((p) => p.id === expandedProject)?.images && projects.find((p) => p.id === expandedProject)!.images.length > 0 && (
+                    <div className="space-y-4 pt-6 border-t border-[#C9A962]/30">
+                      <h3 className="text-xl font-semibold text-[#C9A962]">Project Gallery</h3>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {projects.find((p) => p.id === expandedProject)?.images.map((imgSrc, i) => (
+                          <div key={i} className="w-full rounded-lg overflow-hidden border border-[#C9A962]/30 bg-[#000923] group">
+                            <img 
+                              src={imgSrc} 
+                              alt={`Project screenshot ${i + 1}`} 
+                              className="w-full h-full object-contain object-center aspect-video group-hover:scale-105 transition-transform duration-500 cursor-pointer bg-black/40 p-2"
+                              onClick={() => setEnlargedImage(imgSrc)}
+                            />
                           </div>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
-                  </div>
+                  )}
 
                   <div className="space-y-4 pt-6 border-t border-[#C9A962]/30 pb-8">
                     <h3 className="text-xl font-semibold text-[#C9A962]">Links & Resources</h3>
@@ -505,23 +352,41 @@ export function Projects() {
                           View Live
                         </a>
                       )}
-                      <a
-                        href="#"
-                        className="px-6 py-2 bg-[#C9A962]/10 border border-[#C9A962] text-[#C9A962] rounded hover:bg-[#C9A962]/20 transition-colors"
-                      >
-                        Case Study
-                      </a>
-                      <a
-                        href="#"
-                        className="px-6 py-2 bg-[#C9A962]/10 border border-[#C9A962] text-[#C9A962] rounded hover:bg-[#C9A962]/20 transition-colors"
-                      >
-                        Documentation
-                      </a>
                     </div>
                   </div>
                 </div>
               )}
             </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Image Lightbox Modal */}
+      <AnimatePresence>
+        {enlargedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-sm p-4"
+            onClick={() => setEnlargedImage(null)}
+          >
+            <button
+              onClick={() => setEnlargedImage(null)}
+              className="absolute top-4 right-4 p-2 text-white/70 hover:text-white transition-colors z-[101]"
+            >
+              <X className="w-8 h-8" />
+            </button>
+            <motion.img
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              src={enlargedImage}
+              alt="Enlarged view"
+              className="max-w-full max-h-[90vh] object-contain rounded-md shadow-2xl border border-white/10 cursor-default"
+              onClick={(e) => e.stopPropagation()}
+            />
           </motion.div>
         )}
       </AnimatePresence>

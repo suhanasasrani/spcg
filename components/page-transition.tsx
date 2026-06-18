@@ -65,7 +65,7 @@ export function PageTransition({ children, variant = "fade" }: { children: React
       initial={transitionConfig.initial}
       animate={transitionConfig.animate}
       exit={transitionConfig.exit}
-      transition={transitionConfig.transition}
+      transition={transitionConfig.transition as any}
     >
       {children}
     </motion.div>

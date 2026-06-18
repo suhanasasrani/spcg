@@ -42,12 +42,10 @@ export function ScrollProgressDivider({ delay = 0 }: { delay?: number }) {
       />
 
       <motion.div
+        className="absolute inset-0 origin-center shadow-lg"
         style={{
           scaleX,
           opacity,
-        }}
-        className="absolute inset-0 origin-center shadow-lg"
-        style={{
           boxShadow: "0 0 16px rgba(212, 175, 55, 0.6), 0 0 32px rgba(212, 175, 55, 0.3)",
         }}
       />

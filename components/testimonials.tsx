@@ -1,23 +1,23 @@
 "use client"
 
-import { motion, useInView } from "framer-motion"
+import { motion, useInView, AnimatePresence } from "framer-motion"
 import { useRef, useState, useEffect } from "react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { Quote, ArrowRight } from "lucide-react"
 
-const testimonials = [
+const testimonialsData = [
   {
     id: 1,
     quote: "The SPCG team did an excellent job taking multiple demos, making detailed notes, and helping us evaluate options meaningfully. Their inputs played a key role in helping us arrive at the right conclusion.",
     name: "Swapnil Bawane",
-    role: "Representative for Alumni Network & Institutional Partnerships",
-    organization: "Sardar Patel Institute of Technology (SPIT), Mumbai",
+    role: "Representative for Alumni Network",
+    organization: "Sardar Patel Institute of Technology",
   },
   {
     id: 2,
     quote: "What stood out most was the team’s willingness to take ownership of the initiative and see it through end to end. The way they showed up for every discussion, took charge without being asked, and made thoughtful, sharp contributions was genuinely inspiring.",
-    name: "Chirag Katarukanow",
+    name: "Chirag Kataruka",
     role: "Project Mentor",
-    organization: "SPCG (Sardar Patel Consulting Group)",
+    organization: "SPCG",
   },
   {
     id: 3,
@@ -38,30 +38,43 @@ const testimonials = [
 export function Testimonials() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
-  const [current, setCurrent] = useState(0)
+  const [cards, setCards] = useState(testimonialsData)
 
+  const moveToEnd = () => {
+    setCards((prev) => {
+      const newCards = [...prev]
+      const first = newCards.shift()
+      if (first) newCards.push(first)
+      return newCards
+    })
+  }
+
+  const moveToStart = () => {
+    setCards((prev) => {
+      const newCards = [...prev]
+      const last = newCards.pop()
+      if (last) newCards.unshift(last)
+      return newCards
+    })
+  }
+
+  // Auto flip every 5 seconds
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % testimonials.length)
-    }, 6000)
+      moveToEnd()
+    }, 5000)
     return () => clearInterval(timer)
   }, [])
 
-  const getCardRotation = (index: number) => {
-    const distance = (index - current + testimonials.length) % testimonials.length
-    if (distance > testimonials.length / 2) {
-      return distance - testimonials.length
-    }
-    return distance
-  }
-
-  const next = () => setCurrent((prev) => (prev + 1) % testimonials.length)
-  const prev = () => setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length)
-
   return (
-    <section ref={ref} className="relative py-16 px-6 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        {/* Section Header with Decorative Elements */}
+    <section ref={ref} className="relative py-24 px-6 overflow-hidden min-h-screen flex flex-col justify-center">
+      <div className="absolute inset-0 bg-gradient-to-b from-[#000923] via-[#001339] to-[#000923] pointer-events-none -z-10" />
+      
+      {/* Decorative blurred lights */}
+      <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-[#C9A962]/10 blur-[120px] rounded-full pointer-events-none -z-10" />
+      <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-blue-500/10 blur-[120px] rounded-full pointer-events-none -z-10" />
+
+      <div className="max-w-7xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -72,138 +85,88 @@ export function Testimonials() {
             initial={{ scaleX: 0 }}
             animate={isInView ? { scaleX: 1 } : {}}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="h-1 w-16 bg-gradient-to-r from-transparent via-[#C9A962] to-transparent mx-auto mb-6"
+            className="h-[2px] w-24 bg-gradient-to-r from-transparent via-[#C9A962] to-transparent mx-auto mb-6"
           />
-          <h2 className="text-4xl md:text-5xl font-bold text-white text-balance mb-3">
-            Testimonials
+          <h2 className="text-4xl md:text-5xl font-bold text-white text-balance mb-6">
+            Client <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C9A962] to-[#E5C989]">Testimonials</span>
           </h2>
-          <p className="text-[#B8C5D4] text-balance max-w-2xl mx-auto mb-4">
+          <p className="text-[#B8C5D4] text-lg max-w-2xl mx-auto font-light text-balance">
             Hear from those who've worked with us and experienced the impact firsthand
           </p>
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={isInView ? { scaleX: 1 } : {}}
-            transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
-            className="h-1 w-16 bg-gradient-to-r from-transparent via-[#C9A962] to-transparent mx-auto"
-          />
         </motion.div>
 
-        {/* 3D Carousel Container */}
-        <div className="relative h-96 flex items-center justify-center perspective px-8">
-          {/* Cards */}
-          {testimonials.map((testimonial, index) => {
-            const rotation = getCardRotation(index)
-            const isCenter = rotation === 0
-            const zIndex = testimonials.length - Math.abs(rotation)
-
-            return (
-              <motion.div
-                key={testimonial.id}
-                animate={{
-                  rotateY: rotation * 25,
-                  x: rotation * 120,
-                  opacity: Math.abs(rotation) > 2 ? 0 : 1,
-                  scale: isCenter ? 1 : 0.85,
-                }}
-                transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                style={{
-                  zIndex: zIndex,
-                  perspective: "1000px",
-                }}
-                className="absolute w-full max-w-2xl"
-              >
+        <div className="relative h-[450px] md:h-[350px] w-full max-w-3xl mx-auto flex justify-center perspective-[1000px]">
+          <AnimatePresence mode="popLayout">
+            {cards.map((testimonial, index) => {
+              const isFront = index === 0
+              return (
                 <motion.div
-                  className="relative rounded-2xl p-8 h-80 flex flex-col justify-between border border-[#C9A962]/30 backdrop-blur-sm group cursor-pointer"
-                  style={{
-                    background: isCenter
-                      ? "rgba(201, 169, 98, 0.1)"
-                      : "rgba(15, 31, 60, 0.4)",
+                  key={testimonial.id}
+                  layout
+                  initial={{ opacity: 0, y: -50, scale: 0.9 }}
+                  animate={{
+                    x: index === 0 ? 0 : index === 1 ? 320 : index === cards.length - 1 ? -320 : 0,
+                    y: index === 0 ? 0 : 20,
+                    scale: index === 0 ? 1 : index === 1 || index === cards.length - 1 ? 0.8 : 0.6,
+                    rotateY: index === 0 ? 0 : index === 1 ? -20 : index === cards.length - 1 ? 20 : 0,
+                    rotateZ: index === 0 ? 0 : index === 1 ? 4 : index === cards.length - 1 ? -4 : 0,
+                    zIndex: index === 0 ? 50 : index === 1 || index === cards.length - 1 ? 40 : 30,
+                    opacity: index === 0 ? 1 : index === 1 || index === cards.length - 1 ? 0.4 : 0,
                   }}
-                  whileHover={
-                    isCenter
-                      ? {
-                          boxShadow: "0 20px 60px rgba(201, 169, 98, 0.2)",
-                          borderColor: "#C9A962",
-                        }
-                      : {}
-                  }
+                  exit={{ opacity: 0, y: 200, scale: 0.5 }}
+                  transition={{ 
+                    type: "spring", 
+                    stiffness: 260, 
+                    damping: 20,
+                    layout: { duration: 0.4 } 
+                  }}
+                  className={`absolute left-0 right-0 mx-auto w-full max-w-xl cursor-pointer`}
+                  onClick={() => {
+                    if (index === 1) moveToEnd()
+                    else if (index === cards.length - 1) moveToStart()
+                  }}
+                  style={{ transformOrigin: "top center" }}
                 >
-                  {/* Quote Mark */}
-                  <div className="text-6xl text-[#C9A962]/30 leading-none font-bold">
-                    ""
+                  <div className="relative h-full bg-[#0a1530]/80 backdrop-blur-xl border border-white/10 hover:border-[#C9A962]/50 rounded-2xl p-8 md:p-10 transition-colors duration-500 flex flex-col justify-between shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                    {/* Highlight rim for front card */}
+                    {isFront && (
+                      <div className="absolute inset-0 border border-[#C9A962]/30 rounded-2xl animate-pulse pointer-events-none" />
+                    )}
+                    
+                    <div>
+                      <Quote className="w-10 h-10 text-[#C9A962]/40 mb-6" />
+                      <p className="text-[#E2E8F0] text-lg md:text-xl leading-relaxed mb-8 font-light italic">
+                        "{testimonial.quote}"
+                      </p>
+                    </div>
+                    
+                    <div className="flex items-center justify-between border-t border-white/10 pt-6">
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#C9A962] to-[#8C7335] flex items-center justify-center text-[#000923] font-bold text-xl shadow-lg">
+                          {testimonial.name.charAt(0)}
+                        </div>
+                        <div>
+                          <h4 className="text-white font-semibold text-lg">{testimonial.name}</h4>
+                          <p className="text-[#C9A962] text-sm font-medium">{testimonial.role}</p>
+                          <p className="text-[#8B9BB4] text-xs mt-1">{testimonial.organization}</p>
+                        </div>
+                      </div>
+                      
+                      {isFront && (
+                        <div className="flex items-center gap-2 text-[#C9A962]/60 text-sm animate-pulse">
+                          <span>Next</span>
+                          <ArrowRight className="w-4 h-4" />
+                        </div>
+                      )}
+                    </div>
                   </div>
-
-                  {/* Quote Text */}
-                  <p className="text-white text-sm md:text-base leading-relaxed font-medium line-clamp-4 flex-grow">
-                    {testimonial.quote}
-                  </p>
-
-                  {/* Author Info */}
-                  <div className="space-y-1 pt-4 border-t border-[#C9A962]/20">
-                    <p className="text-white font-semibold text-sm">
-                      {testimonial.name}
-                    </p>
-                    <p className="text-[#B8C5D4] text-xs">
-                      {testimonial.role}
-                    </p>
-                    <p className="text-[#C9A962] text-xs font-medium">
-                      {testimonial.organization}
-                    </p>
-                  </div>
-
-                  {/* Active Indicator */}
-                  {isCenter && (
-                    <motion.div
-                      className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#C9A962]/0 via-[#C9A962] to-[#C9A962]/0"
-                      initial={{ scaleX: 0 }}
-                      animate={{ scaleX: 1 }}
-                      transition={{ duration: 0.6 }}
-                      style={{ originX: 0 }}
-                    />
-                  )}
                 </motion.div>
-              </motion.div>
-            )
-          })}
-        </div>
-
-        {/* Navigation */}
-        <div className="flex items-center justify-center gap-6 mt-6">
-          <motion.button
-            onClick={prev}
-            whileHover={{ scale: 1.1, x: -3 }}
-            whileTap={{ scale: 0.95 }}
-            className="p-2 rounded-full border border-[#C9A962]/40 hover:border-[#C9A962] text-[#C9A962] hover:bg-[#C9A962]/10 transition-colors"
-          >
-            <ChevronLeft size={20} />
-          </motion.button>
-
-          {/* Dots */}
-          <div className="flex gap-2">
-            {testimonials.map((_, index) => (
-              <motion.button
-                key={index}
-                onClick={() => setCurrent(index)}
-                animate={{
-                  scale: current === index ? 1.2 : 1,
-                  backgroundColor:
-                    current === index ? "#C9A962" : "rgba(201, 169, 98, 0.3)",
-                }}
-                className="w-2 h-2 rounded-full transition-colors"
-              />
-            ))}
-          </div>
-
-          <motion.button
-            onClick={next}
-            whileHover={{ scale: 1.1, x: 3 }}
-            whileTap={{ scale: 0.95 }}
-            className="p-2 rounded-full border border-[#C9A962]/40 hover:border-[#C9A962] text-[#C9A962] hover:bg-[#C9A962]/10 transition-colors"
-          >
-            <ChevronRight size={20} />
-          </motion.button>
+              )
+            })}
+          </AnimatePresence>
         </div>
       </div>
     </section>
   )
 }
+
